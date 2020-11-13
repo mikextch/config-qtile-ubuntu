@@ -1,0 +1,4 @@
+#!/bin/bash
+
+source ~/local/qtile/venv/bin/activate
+qtile
