@@ -58,36 +58,34 @@ primary_widgets = [
     separator(),
 
     powerline('color4', 'dark'),
-
-    icon(bg="color4", text=' '), # Icon: nf-fa-download
-    
-    # widget.Pacman(**base(bg='color4'), update_interval=1800),
-    # widget.Cpu(**base(bg='color4')),
-    # widget.KeyboardKbdd(**base(bg='color4'), configured_keyboards =['us', 'es']),
-    # widget.Memory(**base(bg='color4')),
+    icon(bg="color4", text=' '), # Icon: nf-mdi-oil_temperature
+    widget.ThermalSensor(**base(bg='color4'), show_tag=True, update_interval=2),
 
     powerline('color3', 'color4'),
+    icon(bg="color3", text=" "), # Icon: nf-mdi-memory
+    widget.CPU(**base(bg='color3'), update_interval=1),
 
-    icon(bg="color3", text=' '),  # Icon:  nf-mdi-ethernet
+    # widget.KeyboardKbdd(**base(bg='color4'), configured_keyboards=['us', 'es']),
     
-    widget.Net(**base(bg='color3'), interface='enp4s0'),
+    powerline('color4', 'color3'),
+    icon(bg="color4", text=" "), # Icon: nf-fae-chip
+    widget.Memory(**base(bg='color4'), update_interval=5),
+
+    powerline('color3', 'color4'),
+    icon(bg="color3", text=' '),  # Icon:  nf-mdi-ethernet
+    widget.Net(**base(bg='color3'), interface='enp4s0', format='{down} \u2193\u2191 {up}'),
 
     powerline('color2', 'color3'),
-
     widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
 
     widget.CurrentLayout(**base(bg='color2'), padding=5),
 
     powerline('color1', 'color2'),
-
     icon(bg="color1", fontsize=17, text=' '), # Icon: nf-mdi-calendar_clock
-
     widget.Clock(**base(bg='color1'), format='%d/%m/%Y - %H:%M '),
 
     powerline('dark', 'color1'),
-
     widget.Systray(background=colors['color4'], padding=5),
-
 ]
 
 secondary_widgets = [

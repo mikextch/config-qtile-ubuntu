@@ -41,7 +41,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod, "control"], "r", lazy.restart()),
 
     ([mod, "control"], "q", lazy.shutdown()),
-    ([mod], "r", lazy.spawncmd()),
+    # ([mod], "r", lazy.spawncmd()),
 
     # ------------ App Configs ------------
 
@@ -53,6 +53,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
     # Browser
     ([mod], "b", lazy.spawn("firefox")),
+    ([mod, "shift"], "b", lazy.spawn("/opt/firefox-dev/firefox")),
 
     # File Explorer
     ([mod], "e", lazy.spawn("nautilus")),
@@ -61,12 +62,8 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod], "Return", lazy.spawn("alacritty")),
 
     # Redshift
-    # ([mod], "r", lazy.spawn("redshift -O 2400")),
-    # ([mod, "shift"], "r", lazy.spawn("redshift -x")),
-
-    # # Screenshot
-    # ([mod], "s", lazy.spawn("scrot")),
-
+    ([mod], "r", lazy.spawn("redshift -O 5400")),
+    ([mod, "shift"], "r", lazy.spawn("redshift -x")),
     # ------------ Hardware Configs ------------
 
     # # Volume
@@ -80,7 +77,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
         "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     )),
 
-    # # Brightness
-    # ([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
-    # ([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
+    ## System
+    ([mod, "control", "shift"], "p", lazy.spawn("systemctl poweroff")),
+    ([mod, "control"], "u", lazy.spawn("systemctl suspend")),
 ]]

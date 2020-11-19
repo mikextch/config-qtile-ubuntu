@@ -8,9 +8,9 @@ from settings.keys import mod, keys
 # Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
 # Icons: 
 # nf-fa-firefox, 
-# nf-fa-android,
-# nf-dev-terminal, 
 # nf-fa-code, 
+# nf-dev-terminal, 
+# nf-fa-android,
 # nf-seti-config, 
 # nf-mdi-folder, 
 # nf-mdi-image, 
@@ -18,7 +18,7 @@ from settings.keys import mod, keys
 # nf-mdi-layers
 
 groups = [Group(i) for i in [
-    "   ", "   ", "   ", "   ", "   ", "   ", "   ", "   ", "   ",
+    "  ", "  ","  ", "  ", "  ", "  ", "  ", "  ", "  ",
 ]]
 
 for i, group in enumerate(groups):
