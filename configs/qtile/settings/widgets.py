@@ -58,22 +58,22 @@ primary_widgets = [
     separator(),
 
     powerline('color4', 'dark'),
-    icon(bg="color4", text=' '), # Icon: nf-mdi-oil_temperature
-    widget.ThermalSensor(**base(bg='color4'), show_tag=True, update_interval=2),
+    icon(bg="color4", text=' '),  # Icon:  nf-mdi-ethernet
+    widget.Net(**base(bg='color4'), interface='enp4s0', format='{down} \u2193\u2191 {up}'),
 
     powerline('color3', 'color4'),
-    icon(bg="color3", text=" "), # Icon: nf-mdi-memory
-    widget.CPU(**base(bg='color3'), update_interval=1),
+    icon(bg="color3", text=' '), # Icon: nf-mdi-oil_temperature
+    widget.ThermalSensor(**base(bg='color3'), show_tag=True, update_interval=2),
+
+    powerline('color4', 'color3'),
+    icon(bg="color4", text=" "), # Icon: nf-mdi-memory
+    widget.CPU(**base(bg='color4'), update_interval=1),
 
     # widget.KeyboardKbdd(**base(bg='color4'), configured_keyboards=['us', 'es']),
     
-    powerline('color4', 'color3'),
-    icon(bg="color4", text=" "), # Icon: nf-fae-chip
-    widget.Memory(**base(bg='color4'), update_interval=5),
-
     powerline('color3', 'color4'),
-    icon(bg="color3", text=' '),  # Icon:  nf-mdi-ethernet
-    widget.Net(**base(bg='color3'), interface='enp4s0', format='{down} \u2193\u2191 {up}'),
+    icon(bg="color3", text=" "), # Icon: nf-fae-chip
+    widget.Memory(**base(bg='color3'), update_interval=5),
 
     powerline('color2', 'color3'),
     widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
