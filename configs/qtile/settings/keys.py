@@ -60,6 +60,9 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
     # Terminal
     ([mod], "Return", lazy.spawn("alacritty")),
+    #keytype
+    ([mod], "n", lazy.spawn("setxkbmap us")),
+    ([mod, "shift"], "n", lazy.spawn("setxkbmap es")),
 
     # Redshift
     ([mod], "r", lazy.spawn("redshift -O 5400")),

@@ -11,11 +11,24 @@ from settings.path import qtile_path
 from libqtile import widget, bar
 from libqtile.config import Screen
 
-from os import path
+from os import path, environ
 import subprocess
 
 
 @hook.subscribe.startup_once
+def dbus_register():
+    id = environ.get('DESKTOP_AUTOSTART_ID')
+    if not id:
+        return
+    subprocess.Popen(['dbus-send',
+                      '--session',
+                      '--print-reply',
+                      '--dest=org.gnome.SessionManager',
+                      '/org/gnome/SessionManager',
+                      'org.gnome.SessionManager.RegisterClient',
+                      'string:qtile',
+                      'string:' + id])
+
 def autostart():
     subprocess.call([path.join(qtile_path, 'autostart.sh')])
 
