@@ -11,8 +11,14 @@ layout_conf = {
     'margin': 4
 }
 
+layout_monad_conf = {
+    'max_ratio': 0.85,
+    'min_ratio': 0.15
+}
+layout_monad_conf.update(layout_conf)
+
 layouts = [
-    layout.MonadTall(**layout_conf),
+    layout.MonadTall(**layout_monad_conf),
     layout.Max(),
     layout.MonadWide(**layout_conf),
     layout.Bsp(**layout_conf),
